@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Obliczenie pola oraz obwodu prostokąta
+  </title>
+</head>
+
+<body>
+  Obliczenie pola oraz obwodu prostokąta
+  <br> <br>
+
+  Podaj a=
+  <input type="text" id="szerokosc">
+  Podaj b=
+  <input type="text" id="wysokosc">
+  <br>
+  <br>
+  <input type="button" id="oblicz" Value="oblicz">
+  <br>
+  <br>
+  Pole=
+  <input type="text" name="Pole_Arch">
+  obw=
+  <input type="text" name="obw">
+  </form>
+  <table>
+    <tr id="pokaz1"></tr>
+    <tr id="pokaz2"></tr>
+  </table>
+
+  <script language="JavaScript">
+    function Pole_Arch(a_Arch, b_Arch) {
+      a_liczba = parseFloat(a_Arch)
+      b_liczba = parseFloat(b_Arch)
+      Pole_wynik = a_liczba * b_liczba
+      document.getElementsByName('Pole_Arch')[0].value = Pole_wynik.toFixed(2); /* na dokument */
+      alert("Pole=" + Pole_wynik.toFixed(2) + " cm^2"); /*do okna Alert */
+      pokaz1.innerHTML = "Pole=" + Pole_wynik.toFixed(2) + " cm^2" + "<br>";  /* do tabeli */
+    }
+
+    function obw(a_arch, b_arch) {
+      a_licz = parseFloat(a_arch)
+      b_licz = parseFloat(b_arch)
+      var obw = (a_arch * 2) + (b_arch * 2);
+      document.getElementsByName('obw')[0].value = obw.toFixed(2); /* na dokument */
+      alert("Obwod=" + obw);
+      pokaz2.innerHTML = "Obwod" + obw.toFixed(2) + "cm" + "<br>";
+    }
+
+    document.getElementById("oblicz").onclick = function () {
+      wysokosc = document.getElementById("wysokosc").value;
+      szerokosc = document.getElementById("szerokosc").value;
+      Pole_Arch(wysokosc, szerokosc);
+      obw(wysokosc, szerokosc);
+    }
+  </script>
+</body>
+
+</html>

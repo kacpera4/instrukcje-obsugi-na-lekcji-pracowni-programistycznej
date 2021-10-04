@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Drabina
+  </title>
+  <style>
+    input {
+      width: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  Obliczanie odległości od drabiny i kąta
+  <br><br>
+  podaj d= <input type="number" id="d" step="0.01">
+  podaj x= <input type="number" id="x" step="0.01">
+  <br><br>
+  <input type="button" id="oblicz" value="Oblicz">
+  <br><br>
+  Drabina= <input type="number" id="drabina" step="0.01">
+  Alfa= <input type="number" id="alfa" step="0.01">
+
+  <script language="JavaScript">
+    document.getElementById("oblicz").onclick = function() {
+      var d = document.getElementById("d").value;
+      var x = document.getElementById("x").value;
+      dlugosc(d, x);
+      kat(d,x);
+    }
+
+    function dlugosc(d,x){
+      var dl = Math.sqrt(Math.pow(d,2)+Math.pow(x,2));
+      document.getElementById("drabina").value = dl.toFixed(2);
+    }
+
+    function kat(d,x){
+      var a = Math.atan(d/x);
+      document.getElementById("alfa").value = (a * (180/Math.PI)).toFixed(2);
+    }
+
+  </script>
+</body>
+
+</html>

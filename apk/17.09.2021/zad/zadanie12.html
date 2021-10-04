@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Obliczenie pola oraz obwodu Tapezu
+  </title>
+</head>
+
+<body>
+  Obliczenie pola oraz obwodu Trapezu
+  <br> <br>
+
+  Podaj p1=
+  <input type="text" id="p1">
+  Podaj p2=
+  <input type="text" id="p2">
+  Podaj h=
+  <input type="text" id="h">
+  <br>
+  <br>
+  <input type="button" id="oblicz" value="oblicz">
+  <br>
+  <br>
+  Pole=
+  <input type="text" id="pow_1">
+  obw=
+  <input type="text" id="obw_1">
+  </form>
+  <table>
+    <tr id="pow_2"></tr>
+    <tr id="obw_2"></tr>
+  </table>
+
+  <script language="JavaScript">
+    function Pow_Archacki(p1, p2, h) {
+      p1 = parseFloat(p1)
+      p2 = parseFloat(p2)
+      h = parseFloat(h)
+      wynik = (p1 + p2) / 2 * h;
+      document.getElementById('pow_1').value = wynik.toFixed(2); /* na dokument */
+      document.getElementById("pow_2").innerHTML = "Pole=" + wynik.toFixed(2) + " cm^2" + "<br>";  /* do tabeli */
+    }
+
+    function Obw_Archacki(p1, p2, h) {
+      p1 = parseFloat(p1)
+      p2 = parseFloat(p2)
+      h = parseFloat(h)
+      wynik = p1 + p2 + 2 * (Math.sqrt(Math.pow(h, 2) + Math.pow((p1 - p2) / 2, 2)));
+
+      document.getElementById('obw_1').value = wynik.toFixed(2); /* na dokument */
+      document.getElementById("obw_2").innerHTML = "Obwód=" + wynik.toFixed(2);
+    }
+
+    document.getElementById("oblicz").onclick = function () {
+      p1 = document.getElementById("p1").value;
+      p2 = document.getElementById("p2").value;
+      h = document.getElementById("h").value;
+      Pow_Archacki(p1, p2, h);
+      Obw_Archacki(p1, p2, h);
+    }
+
+
+
+  </script>
+</body>
+
+</html>

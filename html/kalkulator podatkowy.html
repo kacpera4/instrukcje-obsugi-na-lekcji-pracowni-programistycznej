@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kalkulator podatkowy</title>
+    <style>
+        #procentryczaltu {
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    Przychód: 
+    <input type="number" id="kwota" min="0" step="0.01"> zł <br>
+    Rodzaj podatku:
+    <select id="rodzaj">
+        <option value="brak"> </option>
+        <option value="liniowy"> Podatek liniowy </option>
+        <option value="progresywny">Podatek progresywny</option>
+        <option value="ryczalt">Podatek ryczałtowy</option>
+        <option value="karta">Karta podatkowa</option>
+    </select>
+    <select id="procentryczaltu">
+        <option value="brak"> </option>
+        <option value="17"> 17% </option>
+        <option value="15"> 15% </option>
+        <option value="85125"> 8,5% do 100tys, 12,5% od </option>
+        <option value="85"> 8,5% </option>
+        <option value="55"> 5,5% </option>
+        <option value="3"> 3% </option>
+        <option value="2"> 2% </option>
+    </select>
+
+    <input type="button" id="oblicz" value="Oblicz">
+
+    <table>
+        <tr>
+            <td> Podatek do zapłaty: </td>
+            <td id="dozaplaty"> </td>
+        </tr>
+    </table>
+
+    <script>
+        document.getElementById("oblicz").onclick = function() {
+            var kwota = document.getElementById("kwota").value;
+            var rodzaj = document.getElementById("rodzaj").value;
+            var wynik = document.getElementById("dozaplaty");
+
+            if(kwota <= 0 || rodzaj == "brak") {
+                alert("Podaj poprawne dane");
+            } else if(rodzaj == "liniowy") {
+                wynik.innerHTML = kwota*0.19+ "zł";
+            }
+            else if (rodzaj == "progresywny"){
+                var podatek = 0;
+                if(kwota <= 85528) {
+                    podatek = kwota * 0.17;
+                } else {
+                    podatek = 85528 * 0.17 + (kwota - 85528) * 0.32;
+                }
+
+                wynik.innerHTML = podatek + " zł";
+            } else if (rodzaj == "ryczalt") {
+                var procent = document.getElementById("procentryczaltu").value;
+                if(procent == "brak")
+                    alert("wybierz typ ryczałtu")
+                else {
+                    var podatek = 0;
+                    if(procent != "85125") {
+                        switch(procent) {
+                            case '17': 
+                                procent = 0.17;
+                            break;
+                            case '15': 
+                                procent = 0.15;
+                            break;
+                            case '85': 
+                                procent = 0.085;
+                            break;
+                            case '55': 
+                                procent = 0.055;
+                            break;
+                            case '3': 
+                                procent = 0.03;
+                            break;
+                            case '2': 
+                                procent = 0.02;
+                            break;
+                        }
+
+                        wynik.innerHTML = kwota * procent + "zł";
+                    } else if(procent == "85125") {
+                        var procent = 0;
+                        if(kwota <= 100000) {
+                            podatek = kwota * 0.085;
+                        } else {
+                            podatek = 100000 * 0.085 + (kwota - 100000) * 0.125 + zł;
+                        }
+                    
+                        wynik.innerHTML = podatek;
+                    }
+                }
+            } else if (rodzaj == "karta") {
+                wynik.innerHTML = "wartość ustalana indywidualnie";
+            }
+        }
+
+        document.getElementById("rodzaj").addEventListener("change", function() {
+            if(this.value == "ryczalt")
+                document.getElementById("procentryczaltu").style.display = "inline";
+            else
+                document.getElementById("procentryczaltu").style.display = "none";
+        });
+
+    </script>
+</body>
+</html>

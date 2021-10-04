@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script type="text/javascript">
+        class Klient {
+            constructor(nazwisko, imie, zawod) {
+                this.nazwisko = nazwisko;
+                this.imie = imie;
+                this.zawod = zawod;
+            }
+
+            pobierzDane() {
+                return this.nazwisko + " " + this.imie + " " + this.zawod;
+            }
+        }
+
+        var osoby = [];
+        osoby[0] = new Klient("Kowalski", "Jan", "kierowca");//nowy obiekt osoba 1
+        osoby[1] = new Klient("Nowak", "Anna", "sekretarka");
+        osoby[2] = new Klient("Archacki", "Kacper", "informatyk");
+        osoby[3] = new Klient("Manski", "Jdasz", "sprzątacz");
+        osoby[4] = new Klient("Wolna", "Anna", "kucharka");
+        osoby[5] = new Klient("Zielony", "Jan", "nauczyciel");
+
+        for (var i = 0; i < osoby.length; i++) {
+            alert(osoby[i].pobierzDane());
+            document.write(osoby[i].pobierzDane() + "<br>");
+            document.write(osoby[i].nazwisko + " " + osoby[i].imie + " " + osoby[i].zawod + "<br>")
+        }
+
+
+        /*
+        function klient(nazwisko_k, imie_k, zawod_k)//początek konstruktora
+        {
+            this.nazwisko = nazwisko_k;
+            this.imie = imie_k;
+            this.zawod = zawod_k;
+        }
+        klient.prototype.wypisz = function ()//definicja metody
+        {
+            alert(this.nazwisko + " " + this.imie + " " + this.zawod);
+        }
+        var osoba1 = new klient("Kowalski", "Jan", "kierowca");//nowy obiekt osoba 1
+        var osoba2 = new klient("Nowak", "Anna", "sekretarka");
+        var osoba3 = new klient("Archacki", "Kacper", "informatyk");
+        var osoba4 = new klient("Manski", "Jdasz", "sprzątacz");
+        var osoba5 = new klient("Wolna", "Anna", "kucharka");
+        var osoba6 = new klient("Zielony", "Jan", "nauczyciel");
+        osoba1.wypisz();
+        osoba2.wypisz();
+        osoba3.wypisz();
+        osoba4.wypisz();
+        osoba5.wypisz();
+        osoba6.wypisz();
+        document.write("dostęp do właściwości" + "<br>");
+        //poniżej dostęp do pól osoby1
+        document.write("klient pierwszy" + " " + osoba1.nazwisko + " " + osoba1.imie + " " + osoba1.zawod + "<br>")
+        document.write("klient drugi" + " " + osoba2.nazwisko + " " + osoba2.imie + " " + osoba2.zawod + "<br>")
+        document.write("klient trzeci" + " " + osoba3.nazwisko + " " + osoba3.imie + " " + osoba3.zawod + "<br>")
+        document.write("klient czwarty" + " " + osoba4.nazwisko + " " + osoba4.imie + " " + osoba4.zawod + "<br>")
+        document.write("klient piąty" + " " + osoba5.nazwisko + " " + osoba5.imie + " " + osoba5.zawod + "<br>")
+        document.write("klient szósty" + " " + osoba6.nazwisko + " " + osoba6.imie + " " + osoba6.zawod)
+        */
+    </script>
+
+</head>
+
+
+</body>
+
+</html>

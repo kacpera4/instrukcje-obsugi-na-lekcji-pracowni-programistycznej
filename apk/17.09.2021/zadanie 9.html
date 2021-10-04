@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>zadanie 16</title>
+</head>
+
+<body>
+	<h3>Cztery sposoby wyprowadzania danych w JS <br> oraz innerHTML<br></h3>
+	<input type="text" id="text">
+	<input type="button" value="oblicz" onclick="oblicz()">
+
+	<script>
+		function oblicz() {
+			var tekst = document.getElementById("text").value;
+
+			document.write(tekst + "<br>");
+			alert(tekst);
+
+			document.write("<input type='text' id='formularz'><br>");
+
+			document.getElementById("formularz").value = tekst;
+
+			document.write("<div id='tabela'><br>");
+
+			document.getElementById("tabela").innerHTML = tekst;
+
+
+		}
+
+
+	</script>
+
+</body>
+
+</html>

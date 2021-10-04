@@ -1,0 +1,5 @@
+C:\xampp\htdocs\4k
+
+how to use
+
+http://localhost/4k/

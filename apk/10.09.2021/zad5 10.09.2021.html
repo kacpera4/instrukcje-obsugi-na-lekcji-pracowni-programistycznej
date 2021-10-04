@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td {
+            border: 1px solid gray;
+            width: 33.3%
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: right; font-size:100px;">Archacki Kacper</h1><br>
+    <table>
+        <tr>
+            <td>
+                <input type="button" value="silnia" onclick="document.getElementById('silnia_wynik').innerHTML = silnia(document.getElementById('silnialiczba').value)">
+                <input type="number" id="silnialiczba">
+            </td>
+            <td>
+                <input type="button" value="fibon" onclick="document.getElementById('fibon_wynik').innerHTML = ciag_fibonaciego_rek(document.getElementById('fib_liczba').value)">
+                <input type="number" id="fib_liczba">
+            </td>
+            <td>
+                <input type="button" value="losój pd 1 do 100" onclick="sto_wartosci_los()"><br>
+            </td>
+        </tr>
+        <tr>
+            <td id="silnia_wynik"></td>
+            <td id="fibon_wynik"></td>
+            <td id="losuj_wynik"></td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+
+        function silnia(i) {
+            if (i == 1) 
+                return 1;
+            else 
+                return i * silnia(i - 1);                
+        }
+
+        function ciag_fibonaciego_rek(i) {
+            if (i == 1 || i == 2)
+                return 1;
+            else
+                return ciag_fibonaciego_rek(i - 1) + ciag_fibonaciego_rek(i - 2);
+        }
+
+        function sto_wartosci_los() {
+            alert(Math.floor(Math.random() * 100 + 1));
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

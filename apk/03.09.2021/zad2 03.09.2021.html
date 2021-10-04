@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="liczba"><br>
+    <input type="button" value="oblicz" id="przycisk" onclick="oblicz()">
+    <div id="wynik"></div>
+
+    <script type="text/javascript">
+
+        function silnia(i) {
+            if (i == 1)
+                return 1;
+            else
+                return i * silnia(i - 1);
+        }
+
+        /*
+        document.getElementById("przycisk").onclick = function() {
+            var liczba = document.getElementById("liczba").value;
+    
+            var silniaWynik = silnia(liczba);
+            
+            document.getElementById("wynik").innerHTML=silniaWynik;
+           // document.write(silniaWynik);
+        }
+        */
+
+        function oblicz() {
+            var liczba = document.getElementById("liczba").value;
+
+            var silniaWynik = silnia(liczba);
+
+            document.getElementById("wynik").innerHTML = silniaWynik;
+            // document.write(silniaWynik);
+        }
+
+    </script>
+</body>
+
+</html>

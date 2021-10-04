@@ -1,0 +1,11 @@
+instrukcja jak używać git z cmd
+
+
+
+cd desktop
+cd apk
+git init
+git add .
+git status.
+git comit -m "Komentarz by był"
+git push

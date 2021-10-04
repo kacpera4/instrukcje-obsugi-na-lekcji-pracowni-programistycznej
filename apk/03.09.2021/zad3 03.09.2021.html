@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    ZAPYTAĆ
+    NAUCZYCIELA
+    O
+    POLECENIE
+    DOKŁADNIE
+
+
+
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var czlowiek = {
+                nazwisko: 'Nowakcki',
+                imie: 'Marek',
+                zawod: 'informatyk',
+                stack: 'net',
+                pokaz() {
+                    return this.nazwisko + " " + this.imie + "<br> " + this.stack + " " + this.zawod;
+                }
+            }
+
+            document.getElementById("pokaz").onclick = function () {
+                document.getElementById("dane").innerHTML = czlowiek.pokaz();
+            }
+
+            czlowiek.wiek = 19;
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <input type="button" id="pokaz">
+    <div id="dane"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+#header{ 
+    text-align: center;
+    border-width: 1cm;
+    
+    
+}
+div{
+    background-color: white;
+    display: block;
+   
+}
+
+
+#h4t{
+    text-align: center;
+}
+body{
+    background-color: black;
+    
+}
+#umiem{
+text-align: center;
+width: 22%;
+float: right;
+
+}
+#doswiadczenie{
+text-align: center;
+float: right;
+width: 21.4%;
+
+}
+#tresc{
+    text-align: center;
+    float: left;
+    width: 44.78%;
+    
+}
+#miejsce_na_zdjecie{
+float: center;
+}
+img{
+    border-radius: 8px;
+}

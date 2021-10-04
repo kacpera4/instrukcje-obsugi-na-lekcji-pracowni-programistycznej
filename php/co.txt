@@ -1,0 +1,18 @@
+co zrobić:
+
+
+Wyśwetl wszystkie dane z tabeli utworzonek PHP MY admin
+wykorzystaj plik connection.php do połączenia z bazą danych
+Ma podstawie pliku wyświrtl również dane z tabeli w tabeli html
+
+
+
+
+kartkówa 2
+Na podsatwie jednego pola|dowóch pól formularza i procedury POST wylosuj tyle wartości ile wpisze użytkownik wartości.Wyświetl tylko
+liczby podzielne przez 3
+
+
+
+
+

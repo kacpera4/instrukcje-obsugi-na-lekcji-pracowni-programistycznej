@@ -1,0 +1,8 @@
+C:\xampp\htdocs\4k
+
+
+a=0
+b=1
+
+b=a== a=1
+a+b= b==2
