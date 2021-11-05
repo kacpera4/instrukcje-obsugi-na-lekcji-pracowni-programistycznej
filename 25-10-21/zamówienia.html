@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hurtownia</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+
+<body>
+    <div id="logo"> <img src="obr\logo2.png" alt="hurtownia"></div>
+    <div id="menu">
+        <a href="index.html">Strona główna</a>
+
+        <a href="zamówienia.html">Zamówienia</a>
+
+        <a href="blog.html">blog o kawie</a>
+
+        <a target="_blank" href="http://gatunki-kawy.pl/">odwiedź także</a>
+
+
+    </div>
+    <div id="baner">
+        <h1>Hurtownia kawy</h1>
+    </div>
+
+
+    <div id="lewy">
+        <h2>Oferta</h2>
+        <ol>
+            <li>Kawa palona Arabica</li>
+            <li>Kawa palona Robusta</li>
+            <li>Kawa bezkofeinowa</li>
+            <li>Kawa zielona</li>
+        </ol>
+
+
+
+
+    </div>
+    <div id="prawy">
+
+        Podaj numer kawy:<br>
+        <input type="number" id="numer"><br>
+        Podaj wagę w dekagramach<br>
+        <input type="number" id="waga">
+        <input type="button" value="Zamów" onclick="oblicz()">
+        <div id="wynik">
+
+        </div>
+    </div>
+
+    <div id="stopka"> Stronę przygotował:000000000000000000</div>
+
+
+    <script>
+        function oblicz() {
+            var numer = document.getElementById("numer").value;
+            var waga = document.getElementById("waga").value;
+            var wynik = document.getElementById("wynik");
+            if (waga < 0) {
+                wynik.innerHTML = "";
+            } else {
+                if(numer==1){
+                    wynik.innerHTML = "Koszt zamówienia wynosi " + waga * 5 + " zł";
+                } else if (numer==2){
+                    wynik.innerHTML = "Koszt zamówienia wynosi " + waga * 6 + " zł";
+                } else if (numer==3){
+                    wynik.innerHTML = "Koszt zamówienia wynosi " + waga * 7 + " zł";
+                } else {
+                    wynik.innerHTML = "Koszt zamówienia wynosi 0 zł";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

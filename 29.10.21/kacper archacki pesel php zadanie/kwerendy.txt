@@ -1,0 +1,8 @@
+zapytanie 1:
+Select id,marka,model FROM samochody;
+
+zapytanie 2:
+SELECT samochody_id, Klient FROM zamowienia;
+
+zapytanie 3:
+Select * FROM samochody WHERE marka ="Fiat"
